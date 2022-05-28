@@ -9,6 +9,8 @@ import (
 )
 
 var (
+	AutoRole 		= "978307861836857386"
+	GuildID			= "978304773415641128"
 	Token			string
 	RedisHost 		string
 	RedisPort 		string
