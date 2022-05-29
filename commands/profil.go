@@ -108,6 +108,11 @@ func ProfilHandler(s *discordgo.Session, i *discordgo.InteractionCreate, u *db.U
 		})
 	}
 
+	description := "%v kullanıcısının Pokémon GO ve Pokémon Unite profili hakkında aşağıdan bilgi alabilirsiniz."
+	if len(fields) < 1 {
+		description = "%v kullanıcısının Pokémon GO ve Pokémon Unite profili hakkında hiçbir bilgi bulunmamaktadır. Bu kullanıcıya profilini düzenlemesini söyleyebilirsiniz."
+	}
+
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData {
@@ -119,6 +124,7 @@ func ProfilHandler(s *discordgo.Session, i *discordgo.InteractionCreate, u *db.U
 					Thumbnail: &discordgo.MessageEmbedThumbnail{
 						URL: icon,
 					},
+					Description: fmt.Sprintf(description, member.User.Username),
 					Fields: fields,
 					Color: color,
 				},
