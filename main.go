@@ -47,10 +47,14 @@ func main() {
 
 	if flagMigrateDB {
 		db.Migrate()
+		os.Exit(0)
+		return
 	}
 
 	if flagMigrateCommands {
 		commands.Migrate(s)
+		os.Exit(0)
+		return
 	}
 
 	r := gin.Default()

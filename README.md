@@ -26,5 +26,6 @@ Bot ile ilgili aklınızdaki yenilikleri bir issue açarak belirtebilir veya ken
 - `go mod tidy` komutu ile gerekli paketleri indirin.
 - `go run . --all` komutu ile database kurulumunu yapın ve komutları Discord API'ye pushlayın.
 - `go run .` komutu ile botu başlatın.
-- Yeni bir komut eklediyseniz `go run . --commands` komutunu çalıştırın. 
+- Yeni bir komut eklediyseniz `go run . --commands` komutunu çalıştırın.
+- Databasede bir değişiklik yaptıysanız `go run . --db` komutunu çalıştırın.
 - Bir pull request açın.
